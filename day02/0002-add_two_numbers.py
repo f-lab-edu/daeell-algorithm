@@ -13,11 +13,11 @@ class Solution:
         two = two[::-1]
         
         sum_num = str(int(one) + int(two))
-        head = ListNode(0)
+        head = ListNode(sum_num[-1])
         curr = head
-        for i in range(len(sum_num)-1, -1, -1):
+        for i in range(len(sum_num)-2, -1, -1):
             new_node = ListNode(sum_num[i])
             curr.next = new_node
             curr = new_node
     
-        return head.next
+        return head
