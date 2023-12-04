@@ -17,7 +17,7 @@ class Solution:
                 res = even
         return res
     
-# 12/5 피드백 적용
+# 12/4 피드백 적용
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         def getMaximumPalindrome(l, r):
