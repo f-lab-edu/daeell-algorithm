@@ -25,7 +25,7 @@ class Solution:
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        dummy_head = ListNode(0)
+        dummy_head = ListNode(-1)
         curr_node = dummy_head
         flag = 0
         while l1 or l2 or flag:
