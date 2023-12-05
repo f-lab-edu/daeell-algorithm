@@ -4,10 +4,10 @@ class Solution:
         two = ""
         while l1:
             one += str(l1.val)
-            l1 = l1.next if l1 else None
+            l1 = l1.next
         while l2:
             two += str(l2.val)
-            l2 = l2.next if l2 else None
+            l2 = l2.next
         
         one = one[::-1]
         two = two[::-1]
@@ -25,8 +25,8 @@ class Solution:
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        head = ListNode(0)
-        curr_node = head
+        dummy_head = ListNode(0)
+        curr_node = dummy_head
         flag = 0
         while l1 or l2 or flag:
             tmp_one = l1.val if l1 else 0
