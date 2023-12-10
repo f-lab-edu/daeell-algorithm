@@ -2,16 +2,17 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         max_length = 0
         curr_word = []
-        for string in s:
-            if string not in curr_word:
-                curr_word.append(string)
+        for c in s:
+            if c not in curr_word:
+                curr_word.append(c)
             else:
-                while string in curr_word:
+                while c in curr_word:
                     del curr_word[0]
-                curr_word.append(string)
+                curr_word.append(c)
             max_length = max(max_length, len(curr_word))
         return max_length
-    
+
+
 # del -> collection.deque.popleft
 from collections import deque
 
