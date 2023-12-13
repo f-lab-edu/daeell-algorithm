@@ -29,3 +29,20 @@ class Solution:
                 else:
                     right = mid - 1
         return None
+    
+# Space Complexity O(1)
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        res = 0  # O(1)
+        idx1, idx2 = 0, 0  # O(1)
+
+        for idx, num in enumerate(nums):  # O(n)
+            res = target - num  # O(1)
+            idx1 = idx  # O(1)
+
+            if res in nums:  # 최악의 경우 O(n),
+                idx2 = nums.index(res)  # 최악의 경우 O(n),
+                if idx2 != idx1:  # O(1)
+                    return [idx1, idx2]  # O(1)
+
+        return None
