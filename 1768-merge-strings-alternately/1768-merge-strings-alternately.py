@@ -33,3 +33,16 @@ class Solution:
             if i < len(word2): 
                 merged_list.append(word2[i]) # O(1)
         return ''.join(merged_list) # O(n)
+    
+# 풀이 4 zip을 활용하여 가독성 개선
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        merged_string = ""
+
+        # zip() 함수를 사용하여 word1과 word2의 각 문자를 순차적으로 결합
+        for char1, char2 in zip(word1, word2):  # O(n) n은 두 문자열 중 더 긴 문자열 길이
+            merged_string += char1 + char2
+
+        merged_string += word1[len(word2) :] + word2[len(word1) :] # O(k) k는  word1과 word2의 남은 부분의 길이 중 더 긴 길이 최악의 경우 O(n)
+
+        return merged_string
