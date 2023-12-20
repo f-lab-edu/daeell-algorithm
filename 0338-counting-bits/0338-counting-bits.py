@@ -21,3 +21,16 @@ class Solution:
             count_bits_top_down(i)
 
         return [res[i] for i in range(n + 1)]
+    
+# 12/20 using functools.cache
+from functools import cache
+
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        @cache 
+        def count_bits_top_down(num):
+            if num == 0:
+                return 0
+            return count_bits_top_down(num >> 1) + (num & 1)
+
+        return [count_bits_top_down(i) for i in range(n + 1)]   
