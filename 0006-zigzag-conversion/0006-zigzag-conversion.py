@@ -13,3 +13,20 @@ class Solution:
                 change = 1
             idx += change
         return "".join("".join(row) for row in zigzag)
+    
+# 12/24
+class Solution:
+    def convert(self, s: str, n: int) -> str:
+        if n == 1:
+            return s
+
+        res = ""
+        for r in range(n):
+            inc = 2 * (n - 1)
+            for i in range(r, len(s), inc):
+                res += s[i]
+                mid = i + inc - 2 * r
+                if r != 0 and r != n - 1 and mid < len(s):
+                    res += s[mid]
+
+        return res
