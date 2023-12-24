@@ -15,3 +15,12 @@ class Solution:
             seen.add(freq)
 
         return True
+
+# Counter 사용
+from collections import Counter
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        occurrences = Counter(arr)
+        freqs = occurrences.values()
+        return len(freqs) == len(set(freqs))
